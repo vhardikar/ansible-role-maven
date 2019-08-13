@@ -1,0 +1,4 @@
+- name: downloading maven
+  get_url:
+          url: "{{ maven_download_url }}"
+          dest: "{{ maven_installation_directory }}"

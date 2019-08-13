@@ -1,0 +1,8 @@
+- name: set maven_home and path variable in .bashrc
+  blockinfile:
+             path: "~/.bashrc"
+             block: |
+                  export JAVA_HOME={{ java_home }}
+                  export MAVEN_HOME={{ maven_home }}
+                  export PATH=$MAVEN_HOME/bin:$JAVA_HOME/bin:$PATH
+

@@ -1,0 +1,4 @@
+- name: remove the file
+  file:
+          state: absent
+          path: "{{ maven_unzip_path }}"

@@ -1,0 +1,15 @@
+---
+# vars file for ansible-role-maven
+maven_version: "3.2.5"
+java_home: "/data/java1/jdk1.8.0_131"
+maven_installation_directory: "/data/apache-maven"
+maven_m2_repo: "/data/m2/repository"
+maven_download_url: "http://www-us.apache.org/dist/maven/maven-3/{{ maven_version }}/binaries/apache-maven-{{ maven_version }}-bin.tar.gz"
+maven_unzip_path: "{{ maven_installation_directory }}/apache-maven-3.2.5-bin.tar.gz"
+unzip_path: "{{ maven_installation_directory }}/{{ maven_version}}"
+maven_home: "{{ unzip_path }}/apache-maven-3.2.5"
+all_tasks:
+        - 'tasks/download_maven.yml'
+        - 'tasks/untar_maven.yml'
+        - 'tasks/set_env.yml'
+        - 'tasks/remove_zip.yml'
